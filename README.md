@@ -1,6 +1,6 @@
 # Mental Health Therapy Center
 
-<<<<<<< HEAD
+
 ## Screenshot
 
 ![Home Page](screenshots/img.png)
