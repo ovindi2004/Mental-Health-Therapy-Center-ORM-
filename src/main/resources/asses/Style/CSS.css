@@ -1,0 +1,724 @@
+/* =============================================
+   SERENITY - Mental Health Therapy Center
+   Global JavaFX Stylesheet
+   ============================================= */
+
+/* ── Colour Palette ──────────────────────────
+   Primary Dark  : #001433
+   Primary Mid   : #031d47
+   Primary Blue  : #3A7BD5
+   Mid Blue      : #2563B0 / #2563EB
+   Navy          : #1E3A6E
+   Accent Cyan   : #C1F0F6
+   Background    : #EEF3FB / #F0F4FA
+   Surface White : white
+   Border Light  : #D0E2FA / #CBD8EC / #B8D0F5
+   Input BG      : #F0F5FF / #F1F5FB
+   Text Muted    : #7A8BA5
+   Text Subtle   : #A0B3CC
+   Success       : #16A34A
+   Warning       : #D97706
+   Error         : #D32F2F / #E24B4A / #B91C1C
+   ─────────────────────────────────────────── */
+
+/* ═══════════════════════════════════════════
+   ROOT / SCENE
+   ═══════════════════════════════════════════ */
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #EEF3FB;
+}
+
+/* ═══════════════════════════════════════════
+   TOP NAVIGATION BAR
+   ═══════════════════════════════════════════ */
+.top-nav {
+    -fx-background-color: #001433;
+    -fx-padding: 0 24;
+    -fx-pref-height: 62;
+}
+
+.top-nav-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.top-nav-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #C1F0F6;
+}
+
+.top-nav-welcome {
+    -fx-text-fill: rgba(255, 255, 255, 0.90);
+    -fx-font-size: 13px;
+    -fx-padding: 0 16 0 0;
+}
+
+/* ═══════════════════════════════════════════
+   SIDEBAR
+   ═══════════════════════════════════════════ */
+.sidebar {
+    -fx-background-color: #031d47;
+    -fx-padding: 20 10;
+    -fx-pref-width: 220;
+}
+
+.sidebar-section-label {
+    -fx-text-fill: rgba(255, 255, 255, 0.45);
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 10 8 10;
+}
+
+.sidebar-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: rgba(255, 255, 255, 0.80);
+    -fx-font-size: 15px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-pref-width: 200;
+    -fx-pref-height: 40;
+}
+
+.sidebar-btn:hover {
+    -fx-background-color: rgba(58, 123, 213, 0.30);
+    -fx-text-fill: white;
+}
+
+.sidebar-btn-active {
+    -fx-background-color: #3A7BD5;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-pref-width: 200;
+    -fx-pref-height: 40;
+}
+
+/* ═══════════════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════════════ */
+
+/* --- Primary / Save Button --- */
+.btn-primary {
+    -fx-background-color: #031d47;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-cursor: hand;
+    -fx-padding: 10 20;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #001433;
+}
+
+/* --- Update / Blue Button --- */
+.btn-update {
+    -fx-background-color: #2563B0;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-padding: 10 20;
+}
+
+.btn-update:hover {
+    -fx-background-color: #1E4D8C;
+}
+
+/* --- Accent / Bright Blue Button --- */
+.btn-accent {
+    -fx-background-color: #3A7BD5;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-padding: 10 20;
+}
+
+.btn-accent:hover {
+    -fx-background-color: #2563B0;
+}
+
+/* --- Secondary / Clear Button --- */
+.btn-secondary {
+    -fx-background-color: #EEF3FB;
+    -fx-text-fill: #3A5B8E;
+    -fx-border-color: #B8D0F5;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+    -fx-padding: 10 20;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #D0E2FA;
+}
+
+/* --- Danger / Delete Button --- */
+.btn-danger {
+    -fx-background-color: #FEE2E2;
+    -fx-text-fill: #B91C1C;
+    -fx-border-color: #FECACA;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 8 16;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #FECACA;
+}
+
+/* --- Ghost / Nav Bar Logout Button --- */
+.btn-ghost {
+    -fx-background-color: rgba(255, 255, 255, 0.18);
+    -fx-text-fill: white;
+    -fx-border-color: rgba(255, 255, 255, 0.40);
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-size: 12px;
+    -fx-padding: 6 16;
+    -fx-cursor: hand;
+}
+
+.btn-ghost:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.28);
+}
+
+/* --- Print / Light Button --- */
+.btn-light {
+    -fx-background-color: #EBF2FF;
+    -fx-text-fill: #2563B0;
+    -fx-border-color: #B8D0F5;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+    -fx-padding: 0 16;
+}
+
+.btn-light:hover {
+    -fx-background-color: #D0E2FA;
+}
+
+/* ═══════════════════════════════════════════
+   FORM INPUTS
+   ═══════════════════════════════════════════ */
+.input-field {
+    -fx-background-color: #F0F5FF;
+    -fx-border-color: #B8D0F5;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 14;
+    -fx-font-size: 13px;
+    -fx-text-fill: #1E3A6E;
+    -fx-prompt-text-fill: #94A3B8;
+}
+
+.input-field:focused {
+    -fx-border-color: #3A7BD5;
+    -fx-background-color: #EBF2FF;
+}
+
+.input-field-alt {
+    -fx-background-color: #F1F5FB;
+    -fx-border-color: #CBD8EC;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 14;
+    -fx-font-size: 13px;
+    -fx-text-fill: #1E3A6E;
+    -fx-prompt-text-fill: #94A3B8;
+}
+
+.input-field-alt:focused {
+    -fx-border-color: #3A7BD5;
+}
+
+/* ComboBox & DatePicker base */
+.combo-box,
+.date-picker {
+    -fx-background-color: #F0F5FF;
+    -fx-border-color: #B8D0F5;
+    -fx-border-radius: 7;
+    -fx-background-radius: 7;
+    -fx-font-size: 13px;
+}
+
+.combo-box:focused,
+.date-picker:focused {
+    -fx-border-color: #3A7BD5;
+}
+
+.combo-box .list-cell {
+    -fx-font-size: 13px;
+    -fx-text-fill: #1E3A6E;
+}
+
+/* TextArea */
+.text-area {
+    -fx-background-color: #F0F5FF;
+    -fx-border-color: #B8D0F5;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 14;
+    -fx-font-size: 13px;
+    -fx-text-fill: #1E3A6E;
+    -fx-prompt-text-fill: #94A3B8;
+}
+
+.text-area .content {
+    -fx-background-color: #F0F5FF;
+    -fx-background-radius: 8;
+}
+
+/* PasswordField */
+.password-field {
+    -fx-background-color: #F0F5FF;
+    -fx-border-color: #B8D0F5;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 14;
+    -fx-font-size: 13px;
+    -fx-pref-height: 42;
+}
+
+.password-field:focused {
+    -fx-border-color: #3A7BD5;
+}
+
+/* ═══════════════════════════════════════════
+   FORM LABELS
+   ═══════════════════════════════════════════ */
+.form-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3A5B8E;
+    -fx-padding: 6 0 2 0;
+}
+
+.form-label-lg {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E3A6E;
+    -fx-padding: 6 0 2 0;
+}
+
+.error-label {
+    -fx-font-size: 11px;
+    -fx-text-fill: #D32F2F;
+}
+
+.success-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #16A34A;
+}
+
+/* ═══════════════════════════════════════════
+   PAGE HEADINGS
+   ═══════════════════════════════════════════ */
+.page-title {
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E3A6E;
+}
+
+.page-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #7A8BA5;
+}
+
+.section-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E3A6E;
+    -fx-padding: 0 0 14 0;
+}
+
+.panel-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E3A6E;
+}
+
+/* ═══════════════════════════════════════════
+   STAT CARDS
+   ═══════════════════════════════════════════ */
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-color: #D0E2FA;
+    -fx-border-radius: 12;
+    -fx-padding: 18 20;
+    -fx-pref-height: 100;
+}
+
+.stat-card-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #7A8BA5;
+}
+
+.stat-card-value {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3A7BD5;
+}
+
+.stat-card-value-blue {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2563B0;
+}
+
+.stat-card-value-navy {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E3A6E;
+}
+
+.stat-card-value-green {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #16A34A;
+}
+
+.stat-card-value-amber {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #D97706;
+}
+
+.stat-card-footer {
+    -fx-font-size: 11px;
+    -fx-text-fill: #A0B3CC;
+}
+
+/* ═══════════════════════════════════════════
+   PROGRAM MINI-CARDS (TherapyProgramManagement)
+   ═══════════════════════════════════════════ */
+.program-card {
+    -fx-background-color: #EBF2FF;
+    -fx-background-radius: 10;
+    -fx-border-color: #B8D0F5;
+    -fx-border-radius: 10;
+    -fx-padding: 14 12;
+    -fx-pref-width: 148;
+}
+
+.program-card-id {
+    -fx-font-size: 10px;
+    -fx-text-fill: #3A7BD5;
+    -fx-font-weight: bold;
+}
+
+.program-card-name {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E3A6E;
+}
+
+.program-card-duration {
+    -fx-font-size: 11px;
+    -fx-text-fill: #7A8BA5;
+}
+
+.program-card-fee {
+    -fx-font-size: 12px;
+    -fx-text-fill: #2563B0;
+    -fx-font-weight: bold;
+}
+
+/* Fee display box (Payment screen) */
+.fee-display-box {
+    -fx-background-color: #EBF2FF;
+    -fx-background-radius: 8;
+    -fx-border-color: #B8D0F5;
+    -fx-border-radius: 8;
+    -fx-padding: 12;
+}
+
+.fee-display-label {
+    -fx-font-size: 11px;
+    -fx-text-fill: #7A8BA5;
+}
+
+.fee-display-value {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2563B0;
+}
+
+/* ═══════════════════════════════════════════
+   TABLE VIEW
+   ═══════════════════════════════════════════ */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #D0E2FA;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-table-cell-border-color: #EEF3FB;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #EBF2FF;
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: #EBF2FF;
+    -fx-border-color: transparent transparent #D0E2FA transparent;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E3A6E;
+    -fx-alignment: CENTER;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: #EEF3FB;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #F8FAFF;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #D0E2FA;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: #EBF2FF;
+}
+
+.table-view .table-cell {
+    -fx-font-size: 13px;
+    -fx-text-fill: #1E3A6E;
+    -fx-alignment: CENTER;
+}
+
+/* ═══════════════════════════════════════════
+   FORM PANEL (Left side)
+   ═══════════════════════════════════════════ */
+.form-panel {
+    -fx-background-color: white;
+    -fx-border-color: #D0E2FA;
+    -fx-border-width: 0 1 0 0;
+    -fx-padding: 28 24;
+}
+
+/* ═══════════════════════════════════════════
+   CONTENT CARD (white rounded box)
+   ═══════════════════════════════════════════ */
+.content-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-color: #D0E2FA;
+    -fx-border-radius: 12;
+    -fx-padding: 20;
+}
+
+/* ═══════════════════════════════════════════
+   SEARCH FIELD
+   ═══════════════════════════════════════════ */
+.search-field {
+    -fx-background-color: white;
+    -fx-border-color: #B8D0F5;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 7 10;
+    -fx-font-size: 12px;
+    -fx-text-fill: #1E3A6E;
+    -fx-prompt-text-fill: #94A3B8;
+}
+
+.search-field:focused {
+    -fx-border-color: #3A7BD5;
+}
+
+/* ═══════════════════════════════════════════
+   SCROLL PANE
+   ═══════════════════════════════════════════ */
+.scroll-pane {
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* ═══════════════════════════════════════════
+   TAB PANE (Reports screen)
+   ═══════════════════════════════════════════ */
+.tab-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-color: #001433;
+    -fx-border-radius: 12;
+}
+
+.tab-pane .tab-header-area {
+    -fx-background-color: #EBF2FF;
+    -fx-border-color: transparent transparent #D0E2FA transparent;
+}
+
+.tab-pane .tab {
+    -fx-background-color: transparent;
+    -fx-text-fill: #7A8BA5;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: white;
+    -fx-text-fill: #1E3A6E;
+    -fx-font-weight: bold;
+}
+
+.tab-pane .tab-content-area {
+    -fx-background-color: white;
+}
+
+/* ═══════════════════════════════════════════
+   SEPARATOR
+   ═══════════════════════════════════════════ */
+.separator .line {
+    -fx-border-color: rgba(255, 255, 255, 0.15);
+    -fx-border-width: 1;
+}
+
+/* ═══════════════════════════════════════════
+   LOGIN PAGE
+   ═══════════════════════════════════════════ */
+.login-root {
+    -fx-background-color: #3A7BD5;
+}
+
+.login-left-panel {
+    -fx-background-color: #001433;
+    -fx-padding: 60 50 60 50;
+}
+
+.login-right-panel {
+    -fx-background-color: white;
+    -fx-padding: 80 80 80 80;
+}
+
+.login-app-name {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.login-tagline {
+    -fx-font-size: 15px;
+    -fx-text-fill: #C1F0F6;
+    -fx-font-style: italic;
+}
+
+.login-feature-label {
+    -fx-text-fill: rgba(255, 255, 255, 0.85);
+}
+
+.login-footer {
+    -fx-font-size: 10px;
+    -fx-text-fill: rgba(255, 255, 255, 0.60);
+}
+
+.login-welcome {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E3A6E;
+}
+
+.login-welcome-sub {
+    -fx-font-size: 13px;
+    -fx-text-fill: #7A8BA5;
+}
+
+.login-copyright {
+    -fx-font-size: 10px;
+    -fx-text-fill: #B0BCCE;
+}
+
+.login-btn {
+    -fx-background-color: #001433;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-pref-height: 45;
+}
+
+.login-btn:hover {
+    -fx-background-color: #031d47;
+}
+
+/* ═══════════════════════════════════════════
+   CHANGE PASSWORD PAGE
+   ═══════════════════════════════════════════ */
+.change-pwd-root {
+    -fx-background-color: #3A7BD5;
+}
+
+.change-pwd-left {
+    -fx-background-color: #001433;
+    -fx-padding: 60 50;
+}
+
+.change-pwd-icon-label {
+    -fx-font-size: 36px;
+    -fx-text-fill: white;
+}
+
+.change-pwd-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.change-pwd-requirement {
+    -fx-font-size: 12px;
+    -fx-text-fill: rgba(255, 255, 255, 0.75);
+}
+
+.change-pwd-right {
+    -fx-background-color: white;
+    -fx-padding: 60 60;
+}
+
+/* ═══════════════════════════════════════════
+   STATUS LABELS
+   ═══════════════════════════════════════════ */
+.status-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #3A7BD5;
+}
+
+.status-label-muted {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748B;
+}

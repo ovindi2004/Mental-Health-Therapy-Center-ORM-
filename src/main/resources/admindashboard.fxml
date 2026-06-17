@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="720" prefWidth="1200" stylesheets="@asses/Style/admin_dashboard.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mental_health_therapy.controller.AdminDashboardController">
+
+    <!-- TOP NAV -->
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="62" styleClass="top-nav">
+            <ImageView fitHeight="50.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@asses/mentalhealthicon.jpeg" />
+                </image>
+            </ImageView>
+
+            <VBox styleClass="brand-container">
+                <Label styleClass="brand-title" text="SERENITY">
+                    <font><Font size="26.0" /></font>
+                </Label>
+                <Label styleClass="brand-subtitle" text="Mental Health Therapy Center" />
+            </VBox>
+
+            <Region HBox.hgrow="ALWAYS" />
+
+            <Label fx:id="lblWelcome" styleClass="welcome-label" text="Welcome, Admin" />
+
+            <Button onAction="#handleLogout" styleClass="logout-btn" text="Logout" />
+        </HBox>
+    </top>
+
+    <!-- LEFT SIDEBAR -->
+    <left>
+        <VBox spacing="4" styleClass="sidebar">
+
+            <Label styleClass="menu-header" text="MAIN MENU" />
+
+            <Button fx:id="btnDashboard" onAction="#showDashboard" styleClass="sidebar-btn-active" text="  Dashboard" />
+
+            <Button onAction="#patientmanagement" styleClass="sidebar-btn" text="  Patient Management" />
+
+            <Button onAction="#therapistmanagement" styleClass="sidebar-btn" text="  Therapist Management" />
+
+            <Button onAction="#therapyprograms" styleClass="sidebar-btn" text="  Therapy Programs" />
+
+            <Button onAction="#session" styleClass="sidebar-btn" text="  Session Scheduling" />
+
+            <Button onAction="#showPayments" styleClass="sidebar-btn" text="  Payments &amp; Invoices" />
+
+            <Button onAction="#report" styleClass="sidebar-btn" text="  Reports &amp; Analytics" />
+
+            <Separator styleClass="sidebar-separator">
+                <VBox.margin><Insets bottom="10" top="10" /></VBox.margin>
+            </Separator>
+
+            <Label styleClass="menu-header" text="ACCOUNT" />
+
+            <Button onAction="#showChangePassword" styleClass="sidebar-btn" text="  Change Password" />
+        </VBox>
+    </left>
+
+    <!-- MAIN CONTENT -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="main-scrollpane">
+            <VBox spacing="20" styleClass="main-content">
+
+                <VBox spacing="4">
+                    <Label styleClass="page-title" text="Admin Dashboard" />
+                    <Label styleClass="page-subtitle" text="Overview of system activity" />
+                </VBox>
+
+                <!-- STAT CARDS -->
+                <HBox spacing="16">
+
+                    <VBox spacing="6" styleClass="stat-card">
+                        <Label styleClass="stat-label" text="Total Therapists" />
+                        <Label fx:id="lblTotalPatients" styleClass="stat-value-blue" text="0" />
+                        <Label styleClass="stat-sub" text="Active therapists" />
+                    </VBox>
+
+                    <VBox spacing="6" styleClass="stat-card">
+                        <Label styleClass="stat-label" text="Therapy Programs" />
+                        <Label fx:id="lblTodaySessions" styleClass="stat-value-teal" text="0" />
+                        <Label styleClass="stat-sub" text="Available programs" />
+                    </VBox>
+
+                    <VBox spacing="6" styleClass="stat-card">
+                        <Label styleClass="stat-label" text="Total Patients" />
+                        <Label fx:id="lblPendingPayments" styleClass="stat-value-navy" text="0" />
+                        <Label styleClass="stat-sub" text="Registered patients" />
+                    </VBox>
+
+                    <VBox spacing="6" styleClass="stat-card">
+                        <Label styleClass="stat-label" text="Today's Sessions" />
+                        <Label fx:id="lblRevenue" styleClass="stat-value-blue" text="0" />
+                        <Label styleClass="stat-sub" text="Scheduled today" />
+                    </VBox>
+
+                </HBox>
+
+                <!-- PATIENT TABLE -->
+                <VBox spacing="12" styleClass="table-container">
+
+                    <HBox alignment="CENTER_LEFT" spacing="12">
+                        <Label styleClass="table-title" text="Recent Therapy Sessions" />
+                        <Region HBox.hgrow="ALWAYS" />
+                    </HBox>
+
+                    <TableView fx:id="tblPatients" prefHeight="240" styleClass="custom-table">
+                        <columns>
+                            <TableColumn fx:id="colName" prefWidth="250" text="Patient" />
+                            <TableColumn fx:id="colPhone" prefWidth="250" text="Program" />
+                            <TableColumn fx:id="colEmail" prefWidth="250" text="Therapist" />
+                            <TableColumn fx:id="colProgram" prefWidth="250" text="Date" />
+                            <TableColumn fx:id="colAction" prefWidth="250" text="Status" />
+                        </columns>
+                    </TableView>
+
+                </VBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

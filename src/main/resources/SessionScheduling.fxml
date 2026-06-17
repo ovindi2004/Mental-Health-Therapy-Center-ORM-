@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="720" prefWidth="1200" stylesheets="@asses/Style/session_style.css" styleClass="root" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mental_health_therapy.controller.SessionSchedulingController">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="62" styleClass="top-nav">
+            <ImageView fitHeight="50.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@asses/mentalhealthicon.jpeg" />
+                </image>
+            </ImageView>
+            <VBox styleClass="brand-container">
+                <Label styleClass="brand-title" text="SERENITY" />
+                <Label styleClass="brand-subtitle" text="Therapy Session Scheduling" />
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button onAction="#goBack" styleClass="nav-btn" text="← Back" />
+        </HBox>
+    </top>
+
+    <center>
+        <HBox spacing="0">
+            <!-- BOOKING FORM -->
+            <VBox styleClass="form-panel">
+
+                <Label styleClass="form-title" text="Book Session" />
+
+                <VBox spacing="5">
+                    <Label styleClass="form-label" text="Select Patient *" />
+                    <ComboBox fx:id="cmbPatient" styleClass="combo-box" />
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label styleClass="form-label" text="Therapy Program *" />
+                    <ComboBox fx:id="cmbProgram" onAction="#onProgramSelected" styleClass="combo-box" />
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label styleClass="form-label" text="Assign Therapist *" />
+                    <ComboBox fx:id="cmbTherapist" styleClass="combo-box" />
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label styleClass="form-label" text="Session Date *" />
+                    <DatePicker fx:id="dpSessionDate" styleClass="date-picker" />
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label styleClass="form-label" text="Session Time *" />
+                    <ComboBox fx:id="cmbSessionTime" styleClass="combo-box" />
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label styleClass="form-label" text="Session Status" />
+                    <ComboBox fx:id="cmbStatus" styleClass="combo-box" />
+                </VBox>
+
+                <Label fx:id="lblConflictError" styleClass="error-label" text="" wrapText="true" />
+
+                <HBox spacing="10" styleClass="btn-box">
+                    <Button onAction="#bookSession" styleClass="btn-book" text="Book Session" />
+                    <Button onAction="#rescheduleSession" styleClass="btn-reschedule" text="Reschedule" />
+                    <Button onAction="#cancelSession" styleClass="btn-cancel" text="Cancel" />
+                </HBox>
+            </VBox>
+
+            <!-- SESSIONS TABLE -->
+            <VBox styleClass="table-panel" HBox.hgrow="ALWAYS">
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <Label styleClass="table-title" text="All Sessions" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <ComboBox fx:id="cmbFilterStatus" styleClass="filter-combo" />
+                    <TextField fx:id="txtSearchSession" onKeyReleased="#searchSession" promptText="Search..." styleClass="search-field" />
+                </HBox>
+
+                <TableView fx:id="tblSessions" onMouseClicked="#onTableRowClick" styleClass="custom-table" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colId" prefWidth="100" text="ID" />
+                        <TableColumn fx:id="colPatient" prefWidth="200" text="Patient" />
+                        <TableColumn fx:id="colProgram" prefWidth="220" text="Program" />
+                        <TableColumn fx:id="colTherapist" prefWidth="200" text="Therapist" />
+                        <TableColumn fx:id="colDate" prefWidth="180" text="Date" />
+                        <TableColumn fx:id="colTime" prefWidth="100" text="Time" />
+                        <TableColumn fx:id="colStatus" prefWidth="100" text="Status" />
+                    </columns>
+                </TableView>
+                <Label fx:id="lblStatus" styleClass="status-label" text="" />
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

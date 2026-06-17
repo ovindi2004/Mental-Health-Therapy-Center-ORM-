@@ -1,0 +1,351 @@
+/* ========================================
+   REPORTS & ANALYTICS STYLES
+   ======================================== */
+
+.root {
+    -fx-background-color: #EEF3FB;
+}
+
+/* ========================================
+   TOP NAVIGATION
+   ======================================== */
+
+.top-nav {
+    -fx-background-color: #001433;
+    -fx-padding: 0 24;
+    -fx-pref-height: 62;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.brand-container {
+    -fx-padding: 0 0 0 12;
+}
+
+.brand-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.brand-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #C1F0F6;
+}
+
+.nav-btn {
+    -fx-background-color: rgba(255,255,255,0.18);
+    -fx-text-fill: white;
+    -fx-border-color: rgba(255,255,255,0.40);
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-size: 12px;
+    -fx-padding: 6 16;
+    -fx-cursor: hand;
+}
+
+.nav-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.30);
+}
+
+/* ========================================
+   SCROLLPANE
+   ======================================== */
+
+.custom-scrollpane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.custom-scrollpane .viewport {
+    -fx-background-color: transparent;
+}
+
+/* ========================================
+   PAGE HEADER
+   ======================================== */
+
+.page-header {
+    -fx-spacing: 4;
+}
+
+.page-title {
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E3A6E;
+}
+
+.page-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #7A8BA5;
+}
+
+/* ========================================
+   STAT CARDS
+   ======================================== */
+
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-color: #D0E2FA;
+    -fx-border-radius: 12;
+    -fx-padding: 18 20;
+    -fx-pref-width: 200;
+    -fx-spacing: 6;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 6, 0, 0, 2);
+}
+
+.stat-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(58, 123, 213, 0.15), 10, 0, 0, 4);
+    -fx-border-color: #3A7BD5;
+}
+
+.stat-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #7A8BA5;
+}
+
+.stat-value-green {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #16A34A;
+}
+
+.stat-value-blue {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3A7BD5;
+}
+
+.stat-value-teal {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2563B0;
+}
+
+.stat-value-navy {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E3A6E;
+}
+
+.stat-sub {
+    -fx-font-size: 11px;
+    -fx-text-fill: #A0B3CC;
+}
+
+/* ========================================
+   TAB PANE
+   ======================================== */
+
+.custom-tabpane {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-color: #001433;
+    -fx-border-radius: 12;
+    -fx-padding: 0;
+    -fx-pref-height: 380;
+}
+
+.custom-tabpane .tab-header-area {
+    -fx-background-color: transparent;
+    -fx-padding: 8 16 0 16;
+}
+
+.custom-tabpane .tab-header-background {
+    -fx-background-color: transparent;
+}
+
+.custom-tabpane .tab {
+    -fx-background-color: transparent;
+    -fx-padding: 10 16 12 16;
+    -fx-cursor: hand;
+}
+
+.custom-tabpane .tab:selected {
+    -fx-background-color: transparent;
+    -fx-border-color: #3A7BD5;
+    -fx-border-width: 0 0 3 0;
+}
+
+.custom-tabpane .tab .tab-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #7A8BA5;
+}
+
+.custom-tabpane .tab:selected .tab-label {
+    -fx-text-fill: #1E3A6E;
+}
+
+.custom-tabpane .tab-content-area {
+    -fx-background-color: transparent;
+    -fx-padding: 16;
+}
+
+/* ========================================
+   TAB CONTENT
+   ======================================== */
+
+.tab-content {
+    -fx-spacing: 12;
+    -fx-padding: 16;
+}
+
+.tab-header {
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 12;
+}
+
+.tab-header-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E3A6E;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.btn-export {
+    -fx-background-color: #EBF2FF;
+    -fx-text-fill: #2563B0;
+    -fx-border-color: #B8D0F5;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+    -fx-padding: 6 14;
+}
+
+.btn-export:hover {
+    -fx-background-color: #D6E4FF;
+}
+
+.btn-filter {
+    -fx-background-color: #3A7BD5;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+    -fx-padding: 6 14;
+}
+
+.btn-filter:hover {
+    -fx-background-color: #2563B0;
+}
+
+/* ========================================
+   DATE PICKER
+   ======================================== */
+
+.date-picker-small {
+    -fx-font-size: 12px;
+    -fx-pref-width: 150;
+}
+
+.date-picker-small .text-field {
+    -fx-padding: 4 8;
+}
+
+/* ========================================
+   SEARCH FIELD
+   ======================================== */
+
+.search-field {
+    -fx-background-color: #F0F5FF;
+    -fx-border-color: #B8D0F5;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6 10;
+    -fx-font-size: 12px;
+    -fx-pref-width: 200;
+    -fx-text-fill: #1E3A6E;
+    -fx-prompt-text-fill: #94A3B8;
+}
+
+.search-field:focused {
+    -fx-border-color: #3A7BD5;
+    -fx-border-width: 2;
+}
+
+/* ========================================
+   TABLE VIEW
+   ======================================== */
+
+.custom-table {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.custom-table .column-header-background {
+    -fx-background-color: #F0F5FC;
+}
+
+.custom-table .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 8 4;
+}
+
+.custom-table .column-header .label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E3A6E;
+    -fx-alignment: CENTER;
+}
+
+.custom-table .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 4 0;
+}
+
+.custom-table .table-row-cell:odd {
+    -fx-background-color: rgba(240, 245, 252, 0.4);
+}
+
+.custom-table .table-row-cell:hover {
+    -fx-background-color: #E8F0FE;
+}
+
+.custom-table .table-row-cell:selected {
+    -fx-background-color: #3A7BD5;
+    -fx-text-fill: white;
+}
+
+.custom-table .table-cell {
+    -fx-font-size: 13px;
+    -fx-text-fill: #2C3E50;
+    -fx-padding: 8 4;
+    -fx-border-color: transparent;
+    -fx-alignment: CENTER;
+}
+
+.custom-table .table-row-cell:selected .table-cell {
+    -fx-text-fill: white;
+}
+
+/* ========================================
+   TABLE PREF HEIGHTS
+   ======================================== */
+
+.table-therapist {
+    -fx-pref-height: 280;
+}
+
+.table-financial {
+    -fx-pref-height: 260;
+}
+
+.table-history {
+    -fx-pref-height: 260;
+}
+
+/* ========================================
+   MAIN CONTENT
+   ======================================== */
+
+.main-content {
+    -fx-spacing: 24;
+    -fx-padding: 28;
+}

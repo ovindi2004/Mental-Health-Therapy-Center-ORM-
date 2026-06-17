@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="720" prefWidth="1200" stylesheets="@asses/Style/therapist_style.css" styleClass="root" xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="lk.ijse.mental_health_therapy.controller.TherapistManagementController">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="62" styleClass="top-nav">
+            <ImageView fitHeight="50.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@asses/mentalhealthicon.jpeg"/>
+                </image>
+            </ImageView>
+            <VBox styleClass="brand-container">
+                <Label styleClass="brand-title" text="SERENITY"/>
+                <Label styleClass="brand-subtitle" text="Therapist Management"/>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button onAction="#goBack" styleClass="nav-btn" text="← Back"/>
+        </HBox>
+    </top>
+
+    <center>
+        <HBox spacing="0">
+            <!-- FORM PANEL -->
+            <VBox styleClass="form-panel">
+
+                <Label styleClass="form-title" text="Therapist Details"/>
+
+                <VBox spacing="5">
+                    <Label styleClass="form-label" text="Full Name *"/>
+                    <TextField fx:id="txtFullName" promptText="Dr. John Smith" styleClass="form-field"/>
+                    <Label fx:id="lblNameError" styleClass="error-label" text=""/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label styleClass="form-label" text="Specialization *"/>
+                    <TextField fx:id="txtSpecialization" promptText="e.g. Cognitive Behavioral Therapy" styleClass="form-field"/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label styleClass="form-label" text="Phone Number *"/>
+                    <TextField fx:id="txtPhone" promptText="07XXXXXXXX" styleClass="form-field"/>
+                    <Label fx:id="lblPhoneError" styleClass="error-label" text=""/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label styleClass="form-label" text="Email Address *"/>
+                    <TextField fx:id="txtEmail" promptText="doctor@serenity.lk" styleClass="form-field"/>
+                    <Label fx:id="lblEmailError" styleClass="error-label" text=""/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label styleClass="form-label" text="Assigned Program"/>
+                    <ComboBox fx:id="cmbProgram" styleClass="combo-box"/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label styleClass="form-label" text="Availability"/>
+                    <ComboBox fx:id="cmbAvailability" styleClass="combo-box"/>
+                </VBox>
+
+                <HBox spacing="10" styleClass="btn-box">
+                    <Button onAction="#saveTherapist" styleClass="btn-save" text="Save"/>
+                    <Button onAction="#updateTherapist" styleClass="btn-update" text="Update"/>
+                    <Button onAction="#clearForm" styleClass="btn-clear" text="Clear"/>
+                </HBox>
+            </VBox>
+
+            <!-- TABLE PANEL -->
+            <VBox styleClass="table-panel" HBox.hgrow="ALWAYS">
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <Label styleClass="table-title" text="All Therapists"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <TextField fx:id="txtSearch" onKeyReleased="#searchTherapist" promptText="Search therapist..." styleClass="search-field"/>
+                    <Button onAction="#deleteTherapist" styleClass="btn-delete" text="Delete"/>
+                </HBox>
+
+                <TableView fx:id="tblTherapists" onMouseClicked="#onTableRowClick" styleClass="custom-table" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colId" prefWidth="80" text="ID"/>
+                        <TableColumn fx:id="colName" prefWidth="250" text="Name"/>
+                        <TableColumn fx:id="colSpec" prefWidth="220" text="Specialization"/>
+                        <TableColumn fx:id="colPhone" prefWidth="150" text="Phone"/>
+                        <TableColumn fx:id="colEmail" prefWidth="250" text="Email"/>
+                        <TableColumn fx:id="colAvail" prefWidth="150" text="Availability"/>
+                    </columns>
+                </TableView>
+                <Label fx:id="lblStatus" styleClass="status-label" text=""/>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

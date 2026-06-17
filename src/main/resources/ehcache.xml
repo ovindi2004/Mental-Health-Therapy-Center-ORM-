@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns="http://www.ehcache.org/v3"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core.xsd">
+
+    <cache alias="default-cache">
+        <heap unit="entries">1000</heap>
+    </cache>
+
+    <cache alias="default-update-timestamps-region">
+        <heap unit="entries">1000</heap>
+    </cache>
+
+    <cache alias="default-query-results-region">
+        <heap unit="entries">1000</heap>
+    </cache>
+
+    <cache alias="lk.ijse.mental_health_therapy.entity.Patient">
+        <heap unit="entries">1000</heap>
+    </cache>
+
+    <cache alias="lk.ijse.mental_health_therapy.entity.User">
+        <heap unit="entries">1000</heap>
+    </cache>
+
+    <cache alias="lk.ijse.mental_health_therapy.entity.Payment">
+        <heap unit="entries">1000</heap>
+    </cache>
+
+    <cache alias="lk.ijse.mental_health_therapy.entity.Therapist">
+        <heap unit="entries">1000</heap>
+    </cache>
+
+    <cache alias="lk.ijse.mental_health_therapy.entity.TherapySession">
+        <heap unit="entries">1000</heap>
+    </cache>
+
+    <cache alias="lk.ijse.mental_health_therapy.entity.TherapyProgram">
+        <heap unit="entries">1000</heap>
+    </cache>
+
+</config>

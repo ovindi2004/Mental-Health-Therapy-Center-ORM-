@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="lk.ijse.mental_health_therapy.controller.LoginController">
+
+    <!-- FULL SCREEN ROOT -->
+    <HBox AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+
+        <!-- LEFT PANEL - Modern Gradient Background -->
+        <VBox alignment="CENTER" spacing="20" style="-fx-background-color: linear-gradient(to bottom, #0a1628, #1a365d); -fx-padding: 60 50; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 20, 0, 5, 0);">
+
+            <!-- Logo Container with Enhanced Glow -->
+            <StackPane>
+                <Circle fill="#0D244A" radius="100" style="-fx-effect: dropshadow(gaussian, rgba(59,130,246,0.3), 40, 0, 0, 15);" />
+                <Circle fill="#001333" radius="95" style="-fx-effect: dropshadow(gaussian, rgba(59,130,246,0.2), 30, 0, 0, 10);" />
+                <ImageView fitHeight="148" fitWidth="148" preserveRatio="true">
+                    <image>
+                        <Image url="@asses/mentalhealthicon.jpeg" />
+                    </image>
+                </ImageView>
+            </StackPane>
+
+            <!-- Brand Section - Modern Typography -->
+            <VBox alignment="CENTER" spacing="8">
+                <Label style="-fx-font-size: 38px; -fx-font-weight: bold; -fx-text-fill: white; -fx-letter-spacing: 4px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 8, 0, 0, 3);" text="SERENITY" />
+                <Label style="-fx-font-size: 15px; -fx-text-fill: #93c5fd; -fx-font-style: italic; -fx-opacity: 0.95; -fx-font-family: 'Segoe UI';" text="Mental Health Therapy Center" />
+            </VBox>
+
+            <!-- Modern Divider -->
+            <Separator prefWidth="260" style="-fx-background-color: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent); -fx-effect: innershadow(gaussian, rgba(255,255,255,0.1), 5, 0, 0, 0);" />
+
+            <!-- Features with Icons -->
+            <VBox alignment="CENTER_LEFT" spacing="12" style="-fx-padding: 5 0 0 25;">
+                <Label style="-fx-text-fill: rgba(255,255,255,0.9); -fx-font-size: 14px; -fx-font-family: 'Segoe UI';">
+                    <Label style="-fx-text-fill: #60a5fa; -fx-font-weight: bold; -fx-font-size: 16px;">✦</Label> Evidence-Based Treatments
+                </Label>
+                <Label style="-fx-text-fill: rgba(255,255,255,0.9); -fx-font-size: 14px; -fx-font-family: 'Segoe UI';">
+                    <Label style="-fx-text-fill: #60a5fa; -fx-font-weight: bold; -fx-font-size: 16px;">✦</Label> Holistic Wellness Programs
+                </Label>
+                <Label style="-fx-text-fill: rgba(255,255,255,0.9); -fx-font-size: 14px; -fx-font-family: 'Segoe UI';">
+                    <Label style="-fx-text-fill: #60a5fa; -fx-font-weight: bold; -fx-font-size: 16px;">✦</Label> Professional Care &amp; Support
+                </Label>
+            </VBox>
+
+            <!-- Footer -->
+            <Label style="-fx-font-size: 12px; -fx-text-fill: rgba(255,255,255,0.4); -fx-font-style: italic; -fx-font-family: 'Segoe UI';" text="Serving 3,000+ patients annually" />
+        </VBox>
+
+        <!-- RIGHT PANEL - Clean White with Enhanced Shadows -->
+        <VBox alignment="CENTER" spacing="20" style="-fx-background-color: white; -fx-padding: 60 70; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 30, 0, -8, 0);" HBox.hgrow="ALWAYS">
+
+            <!-- Welcome Section -->
+            <VBox spacing="8" alignment="CENTER">
+                <Label style="-fx-font-size: 34px; -fx-font-weight: bold; -fx-text-fill: #1a365d; -fx-font-family: 'Segoe UI'; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 4, 0, 0, 2);" text="Welcome Back" />
+                <Label style="-fx-font-size: 15px; -fx-text-fill: #718096; -fx-font-family: 'Segoe UI'; -fx-padding: 0 0 10 0;" text="Sign in to your account" />
+            </VBox>
+
+            <!-- Username Field - Modern Style -->
+            <TextField fx:id="txtUsername" maxWidth="360" promptText="Enter username" style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-width: 2; -fx-border-radius: 12; -fx-background-radius: 12; -fx-padding: 14 18; -fx-font-size: 14px; -fx-font-family: 'Segoe UI'; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 4, 0, 0, 2);">
+                <style>
+                    -fx-border-color: #4299e1;
+                    -fx-border-width: 2;
+                </style>
+            </TextField>
+
+            <!-- Password Field with Toggle - Modern -->
+            <StackPane maxWidth="360">
+                <PasswordField fx:id="pwdPassword" promptText="Enter password" style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-width: 2; -fx-border-radius: 12; -fx-background-radius: 12; -fx-padding: 14 50 14 18; -fx-font-size: 14px; -fx-font-family: 'Segoe UI'; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 4, 0, 0, 2);" />
+                <TextField fx:id="txtPasswordVisible" managed="false" promptText="Enter password" style="-fx-background-color: #f7fafc; -fx-border-color: #e2e8f0; -fx-border-width: 2; -fx-border-radius: 12; -fx-background-radius: 12; -fx-padding: 14 50 14 18; -fx-font-size: 14px; -fx-font-family: 'Segoe UI'; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 4, 0, 0, 2);" visible="false" />
+                <Button fx:id="btnShowPassword" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 20px; -fx-padding: 0 15; -fx-text-fill: #a0aec0; -fx-font-family: 'Segoe UI';" text="👁" StackPane.alignment="CENTER_RIGHT" />
+            </StackPane>
+
+            <!-- Error Message - Modern -->
+            <Label fx:id="lblError" style="-fx-text-fill: #e53e3e; -fx-font-size: 13px; -fx-font-family: 'Segoe UI'; -fx-font-weight: bold; -fx-padding: 5 0; -fx-effect: dropshadow(gaussian, rgba(229,62,62,0.1), 4, 0, 0, 0);" />
+
+            <!-- Login Button - Modern Gradient -->
+            <Button fx:id="btnLogin" defaultButton="true" maxWidth="360" onAction="#handleLogin" prefHeight="50" style="-fx-background-color: linear-gradient(to right, #1a365d, #2b6cb0); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-font-family: 'Segoe UI'; -fx-background-radius: 12; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(26,54,93,0.3), 15, 0, 0, 5); -fx-padding: 0 20;" text="SIGN IN">
+                <style>
+                    -fx-background-color: linear-gradient(to right, #2b6cb0, #4299e1);
+                    -fx-effect: dropshadow(gaussian, rgba(43,108,176,0.4), 20, 0, 0, 8);
+                </style>
+            </Button>
+
+            <!-- Role Selection - Modern Toggle -->
+            <HBox alignment="CENTER" spacing="35" style="-fx-padding: 10 0 5 0;">
+                <RadioButton fx:id="rbAdmin" style="-fx-font-size: 14px; -fx-font-family: 'Segoe UI'; -fx-text-fill: #2d3748; -fx-font-weight: 600; -fx-padding: 0 0 0 5;" text="Admin">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="roleGroup" />
+                    </toggleGroup>
+                    <style>
+                        -fx-radio-button:selected .radio {
+                        -fx-background-color: #2b6cb0;
+                        -fx-border-color: #2b6cb0;
+                        }
+                    </style>
+                </RadioButton>
+                <RadioButton fx:id="rbReceptionist" style="-fx-font-size: 14px; -fx-font-family: 'Segoe UI'; -fx-text-fill: #2d3748; -fx-font-weight: 600; -fx-padding: 0 0 0 5;" text="Receptionist" toggleGroup="$roleGroup">
+                    <style>
+                        -fx-radio-button:selected .radio {
+                        -fx-background-color: #2b6cb0;
+                        -fx-border-color: #2b6cb0;
+                        }
+                    </style>
+                </RadioButton>
+            </HBox>
+
+            <!-- Copyright - Modern -->
+            <Label style="-fx-font-size: 12px; -fx-text-fill: #a0aec0; -fx-font-family: 'Segoe UI'; -fx-padding: 15 0 0 0;" text="© 2026 Serenity Mental Health Therapy Center" />
+
+        </VBox>
+
+    </HBox>
+
+</AnchorPane>

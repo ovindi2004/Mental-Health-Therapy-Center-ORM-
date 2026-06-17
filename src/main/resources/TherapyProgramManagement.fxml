@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="720" prefWidth="1200" stylesheets="@asses/Style/program_style.css" styleClass="root" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mental_health_therapy.controller.TherapyProgramManagementController">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="62" styleClass="top-nav">
+            <ImageView fitHeight="50.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@asses/mentalhealthicon.jpeg" />
+                </image>
+            </ImageView>
+            <VBox styleClass="brand-container">
+                <Label styleClass="brand-title" text="SERENITY" />
+                <Label styleClass="brand-subtitle" text="Therapy Program Management" />
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button onAction="#goBack" styleClass="nav-btn" text="← Back" />
+        </HBox>
+    </top>
+
+    <center>
+        <HBox spacing="0">
+            <!-- FORM PANEL -->
+            <VBox styleClass="form-panel">
+
+                <Label styleClass="form-title" text="Program Details" />
+
+                <VBox spacing="5">
+                    <Label styleClass="form-label" text="Program ID *" />
+                    <TextField fx:id="txtProgramId" promptText="e.g. MT1006" styleClass="form-field" />
+                    <Label fx:id="lblIdError" styleClass="error-label" text="" />
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label styleClass="form-label" text="Program Name *" />
+                    <TextField fx:id="txtProgramName" promptText="Enter program name" styleClass="form-field" />
+                    <Label fx:id="lblNameError" styleClass="error-label" text="" />
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label styleClass="form-label" text="Duration *" />
+                    <TextField fx:id="txtDuration" promptText="e.g. 12 weeks" styleClass="form-field" />
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label styleClass="form-label" text="Fee (LKR) *" />
+                    <TextField fx:id="txtFee" promptText="e.g. 80000.00" styleClass="form-field" />
+                    <Label fx:id="lblFeeError" styleClass="error-label" text="" />
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label styleClass="form-label" text="Description" />
+                    <TextArea fx:id="txtDescription" prefRowCount="3" promptText="Enter program description..." styleClass="text-area" wrapText="true" />
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label styleClass="form-label" text="Assign Therapist" />
+                    <ComboBox fx:id="cmbTherapist" styleClass="combo-box" />
+                </VBox>
+
+                <HBox spacing="10" styleClass="btn-box">
+                    <Button onAction="#saveProgram" styleClass="btn-save" text="Save" />
+                    <Button onAction="#updateProgram" styleClass="btn-update" text="Update" />
+                    <Button onAction="#clearForm" styleClass="btn-clear" text="Clear" />
+                </HBox>
+            </VBox>
+
+            <!-- TABLE PANEL -->
+            <VBox styleClass="table-panel" HBox.hgrow="ALWAYS">
+                <!-- Program Cards Row (Preset Programs) -->
+                <Label styleClass="table-title" text="All Therapy Programs" />
+
+                <HBox spacing="12" styleClass="cards-container">
+                    <VBox styleClass="program-card">
+                        <Label styleClass="program-card-id" text="MT1001" />
+                        <Label styleClass="program-card-name" text="Cognitive Behavioral" wrapText="true" />
+                        <Label styleClass="program-card-duration" text="12 weeks" />
+                        <Label styleClass="program-card-fee" text="LKR 80,000" />
+                    </VBox>
+                    <VBox styleClass="program-card">
+                        <Label styleClass="program-card-id" text="MT1002" />
+                        <Label styleClass="program-card-name" text="Mindfulness-Based" wrapText="true" />
+                        <Label styleClass="program-card-duration" text="8 weeks" />
+                        <Label styleClass="program-card-fee" text="LKR 50,000" />
+                    </VBox>
+                    <VBox styleClass="program-card">
+                        <Label styleClass="program-card-id" text="MT1003" />
+                        <Label styleClass="program-card-name" text="Dialectical Behavior" wrapText="true" />
+                        <Label styleClass="program-card-duration" text="16 weeks" />
+                        <Label styleClass="program-card-fee" text="LKR 100,000" />
+                    </VBox>
+                    <VBox styleClass="program-card">
+                        <Label styleClass="program-card-id" text="MT1004" />
+                        <Label styleClass="program-card-name" text="Group Therapy" wrapText="true" />
+                        <Label styleClass="program-card-duration" text="6 months" />
+                        <Label styleClass="program-card-fee" text="LKR 120,000" />
+                    </VBox>
+                    <VBox styleClass="program-card">
+                        <Label styleClass="program-card-id" text="MT1005" />
+                        <Label styleClass="program-card-name" text="Family Counseling" wrapText="true" />
+                        <Label styleClass="program-card-duration" text="3 months" />
+                        <Label styleClass="program-card-fee" text="LKR 40,000" />
+                    </VBox>
+                </HBox>
+
+                <TableView fx:id="tblPrograms" onMouseClicked="#onTableRowClick" styleClass="custom-table" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colId" prefWidth="100" text="Program ID" />
+                        <TableColumn fx:id="colName" prefWidth="250" text="Program Name" />
+                        <TableColumn fx:id="colDuration" prefWidth="150" text="Duration" />
+                        <TableColumn fx:id="colFee" prefWidth="150" text="Fee (LKR)" />
+                        <TableColumn fx:id="colTherapist" prefWidth="200" text="Therapist" />
+                        <TableColumn fx:id="colDesc" prefWidth="250" text="Description" />
+                    </columns>
+                </TableView>
+                <Label fx:id="lblStatus" styleClass="status-label" text="" />
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>
